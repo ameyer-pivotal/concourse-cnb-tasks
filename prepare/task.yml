@@ -6,6 +6,9 @@ image_resource:
     repository: cloudfoundry/cnb
     tag: bionic
 
+inputs:
+  - name: tasks
+
 outputs:
   - name: layers
 
