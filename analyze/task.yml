@@ -9,9 +9,12 @@ outputs:
   - name: layers
 
 run:
-  path: tasks/detect/run.sh
+  path: tasks/analyze/run.sh
 
 params:
+  # Image being built (or rebuilt)
+  IMAGE_NAME:
+
   # Subdirectory within source to build (optional)
   SOURCE_SUBDIR:
 

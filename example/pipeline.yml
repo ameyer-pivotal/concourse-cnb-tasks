@@ -1,19 +1,30 @@
 # TODO: CNB_PLATFORM_API
+# TODO: Caching
 ---
 resource_types:
-  - name: gcs-resource
+  - name: gcs
     type: docker-image
     source:
       repository: frodenas/gcs-resource
 
 resources:
-  # Resource for your application source code
+  # Your application source code
   - name: source
     type: git
     source:
-      uri: https://github.com/buildpacks/samples.git
+      uri: ((source_repo))
       branch: master
-      paths: [apps/java-maven]
+      paths: [((source_subdir))]
+
+  # Builder image to use
+  - name: builder
+    type: docker-image
+    source:
+      repository: ((builder_image))
+      tag: ((builder_tag))
+
+  # Resource for cache
+  # TODO
 
   - name: tasks
     type: git
@@ -34,8 +45,15 @@ jobs:
 
       # Run detect phase
       - task: detect
+        image: builder
         file: tasks/detect/task.yml
         params:
-          # Only needed if app is not in root of repo
-          SOURCE_SUBDIR: apps/java-maven
+          SOURCE_SUBDIR: ((source_subdir))
+      
+      # Run analyze phase
+      # - task: analyze
+      #   file: tasks/analyze/task.yml
+      #   params:
+      #     IMAGE_NAME: ((image_name))
+
 
