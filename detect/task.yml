@@ -10,6 +10,9 @@ inputs:
   - name: source
   - name: tasks
 
+outputs:
+  - name: layers
+
 run:
   path: tasks/detect/run.sh
 
