@@ -1,3 +1,4 @@
+# TODO: CNB_PLATFORM_API
 ---
 resource_types:
   - name: gcs-resource
@@ -34,3 +35,4 @@ jobs:
         params:
           # Only needed if app is not in root of repo
           SOURCE_SUBDIR: apps/java-maven
+
