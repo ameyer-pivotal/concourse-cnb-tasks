@@ -37,7 +37,7 @@ jobs:
     plan:
       - get: source
         trigger: true
-
+      - get: builder
       - get: tasks
 
       - task: prepare
