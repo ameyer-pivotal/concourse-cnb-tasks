@@ -40,6 +40,7 @@ jobs:
       - get: builder
       - get: tasks
 
+      # Set up permissions for resource dirs
       - task: prepare
         file: tasks/prepare/task.yml
 
@@ -51,9 +52,8 @@ jobs:
           SOURCE_SUBDIR: ((source_subdir))
       
       # Run analyze phase
-      # - task: analyze
-      #   file: tasks/analyze/task.yml
-      #   params:
-      #     IMAGE_NAME: ((image_name))
-
-
+      - task: analyze
+        image: builder
+        file: tasks/analyze/task.yml
+        params:
+          IMAGE_NAME: ((image_name))

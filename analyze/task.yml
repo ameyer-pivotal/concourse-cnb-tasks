@@ -15,9 +15,6 @@ params:
   # Image being built (or rebuilt)
   IMAGE_NAME:
 
-  # Subdirectory within source to build (optional)
-  SOURCE_SUBDIR:
-
   # User ID of the builder image user
   USER_ID: 1000
 

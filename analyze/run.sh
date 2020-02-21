@@ -5,7 +5,7 @@ set -o nounset
 set -o pipefail
 set -x
 
-/cnb/lifecycle/detector \
+/cnb/lifecycle/analyzer \
   -layers=layers \
   -group=layers/group.toml \
   # TODO
