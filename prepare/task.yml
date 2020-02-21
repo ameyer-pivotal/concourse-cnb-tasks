@@ -2,25 +2,17 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    # Set the builder for this phase
+    # Set the builder for this task
     repository: cloudfoundry/cnb
     tag: bionic
-
-inputs:
-  - name: source
-  - name: tasks
-  - name: layers
 
 outputs:
   - name: layers
 
 run:
-  path: tasks/detect/run.sh
+  path: tasks/prepare/run.sh
 
 params:
-  # Subdirectory within source to build (optional)
-  SOURCE_SUBDIR:
-
   # User ID of the builder image user
   USER_ID: 1000
 

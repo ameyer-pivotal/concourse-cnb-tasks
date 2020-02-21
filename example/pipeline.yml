@@ -29,6 +29,9 @@ jobs:
 
       - get: tasks
 
+      - task: prepare
+        file: tasks/prepare/task.yml
+
       # Run detect phase
       - task: detect
         file: tasks/detect/task.yml
