@@ -2,7 +2,9 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: cloudfoundry/cnb:bionic
+    # Set the builder for this phase
+    repository: cloudfoundry/cnb
+    tag: bionic
 
 inputs:
   - name: source
