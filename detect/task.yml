@@ -10,3 +10,7 @@ inputs:
 
 run:
   path: tasks/detect/run.sh
+
+params:
+  # Subdirectory within source to build (optional)
+  SOURCE_SUBDIR:

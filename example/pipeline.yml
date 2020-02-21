@@ -18,17 +18,20 @@ resources:
     type: git
     source:
       uri: https://github.com/ameyer-pivotal/concourse-cnb-tasks.git
-      branch: master
+      branch: wip #master
 
 jobs:
   - name: build
     plan:
       - get: source
         trigger: true
-        
+
       - get: tasks
 
       # Run detect phase
       - task: detect
         file: tasks/detect/task.yml
         # privileged: true
+        params:
+          # Only needed if app is not in root of repo
+          SOURCE_SUBDIR: apps/java-maven
