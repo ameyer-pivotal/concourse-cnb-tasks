@@ -1,0 +1,11 @@
+platform: linux
+
+inputs:
+  - name: tasks
+  - name: layers
+
+outputs:
+  - name: layers
+
+run:
+  path: tasks/restore/run.sh

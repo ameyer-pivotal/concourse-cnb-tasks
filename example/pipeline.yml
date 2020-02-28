@@ -57,3 +57,10 @@ jobs:
         file: tasks/analyze/task.yml
         params:
           IMAGE_NAME: ((image_name))
+
+      # Run restore phase
+      - task: restore
+        image: builder
+        file: tasks/restore/task.yml
+        params:
+          IMAGE_NAME: ((image_name))

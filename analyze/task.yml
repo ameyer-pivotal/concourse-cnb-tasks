@@ -1,13 +1,13 @@
 platform: linux
 
 inputs:
-  - name: source
   - name: tasks
   - name: layers
   - name: workspace
 
 outputs:
   - name: layers
+  - name: workspace
 
 run:
   path: tasks/analyze/run.sh
@@ -15,9 +15,3 @@ run:
 params:
   # Image being built (or rebuilt)
   IMAGE_NAME:
-
-  # User ID of the builder image user
-  USER_ID: 1000
-
-  # Group ID of the builder image user
-  GROUP_ID: 1000

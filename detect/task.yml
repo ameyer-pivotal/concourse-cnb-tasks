@@ -14,9 +14,3 @@ run:
 params:
   # Subdirectory within source to build (optional)
   SOURCE_SUBDIR:
-
-  # User ID of the builder image user
-  USER_ID: 1000
-
-  # Group ID of the builder image user
-  GROUP_ID: 1000
