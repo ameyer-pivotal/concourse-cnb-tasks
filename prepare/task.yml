@@ -9,6 +9,7 @@ inputs:
 
 outputs:
   - name: layers
+  - name: workspace
 
 run:
   path: tasks/prepare/run.sh

@@ -6,3 +6,4 @@ set -o pipefail
 set -x
 
 chown -R ${USER_ID}:${GROUP_ID} layers
+chown -R ${USER_ID}:${GROUP_ID} workspace
